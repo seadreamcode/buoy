@@ -2,7 +2,6 @@
 
 > tiny, relational database
 
-
 ```go
 package main
 

@@ -30,12 +30,11 @@ func (db *Database) Exec(query string) ([]Row, error) {
 	return nil, nil
 }
 
-// Close with gracefully tie up loose ends
+// Close will gracefully tie up loose ends
 func (db *Database) Close() {
 }
 
-// Table represents a single entity within
-// a Database
+// Table represents a single entity within a Database
 type Table struct {
 	name   string
 	schema *Schema
