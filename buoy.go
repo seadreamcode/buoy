@@ -1,7 +1,14 @@
 package main
 
-import "fmt"
+import "github.com/seadreamcode/buoy/db"
+
+func newDatabase(filename string) (*db.Database, error) {
+	return &db.Database{}, nil
+}
 
 func main() {
-  fmt.Println("Hello Buoy!")
+	db, _ := newDatabase("test.db")
+	defer db.Close()
+
+	db.Exec(`SELECT * FROM users WHERE username = ? LIMIT 1`)
 }
